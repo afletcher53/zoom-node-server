@@ -4,7 +4,8 @@
   "description": "A standalone NodeJS server to call the Zoom REST API 2",
   "main": "index.js",
   "scripts": {
-    "serve": "node index.js"
+    "serve": "node index.js",
+    "start": "node index.js"
   },
   "author": "Aaron Fletcher",
   "license": "ISC",

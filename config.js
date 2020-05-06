@@ -1,1 +1,1 @@
-module.exports = { ZOOM_JWT_TOKEN : '' };
+module.exports = { JWT_TOKEN : '' };

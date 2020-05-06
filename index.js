@@ -2,11 +2,10 @@
 const express = require('express')
 const request = require('request')
 const app = express()
-var { ZOOM_JWT_TOKEN } = require('./config.js');
+var { JWT_TOKEN } = require('./config.js');
 
 app.use(express.json());
 
-JWT_Token = ''
 ZOOM_API_ENDPOINT = 'https://api.zoom.us/v2/'
 
 app.listen(1337, () => {
@@ -25,7 +24,7 @@ app.get("/users", (req, res) => {
             method: 'GET',
             url: ZOOM_API_ENDPOINT + 'users/',
             headers: {
-                 authorization: 'Bearer '+ JWT_Token
+                 authorization: 'Bearer '+ JWT_TOKEN 
              }
         }
         request.get(options, function(error, response, body)
@@ -42,7 +41,7 @@ app.get("/users/:id/meetings", (req, res) => {
         method: 'GET',
         url: ZOOM_API_ENDPOINT + 'users/' + userid + '/meetings',
         headers: {
-             authorization: 'Bearer '+ JWT_Token
+             authorization: 'Bearer '+ JWT_TOKEN 
          }
     }
     request.get(options, function(error, response, body)
@@ -60,7 +59,7 @@ app.get("/meetings/:id", (req, res) => {
             method: 'GET',
             url: ZOOM_API_ENDPOINT + 'meetings/' + meetingid,
             headers: {
-                 authorization: 'Bearer '+ JWT_Token
+                 authorization: 'Bearer '+ JWT_TOKEN 
              }
         }
         request.get(options, function(error, response, body)
@@ -78,7 +77,7 @@ app.get("/past_meetings/:uuid/participants", (req, res) => {
         method: 'GET',
         url: ZOOM_API_ENDPOINT + 'past_meetings/' + meetinguuid + '/participants',
         headers: {
-             authorization: 'Bearer '+ JWT_Token
+             authorization: 'Bearer '+ JWT_TOKEN 
          }
     }
     request.get(options, function(error, response, body)
@@ -96,7 +95,7 @@ app.get("/report/users/:id/meetings", (req, res) => {
         method: 'GET',
         url: ZOOM_API_ENDPOINT + 'report/users/' + id + '/meetings',
         headers: {
-             authorization: 'Bearer '+ JWT_Token
+             authorization: 'Bearer '+ JWT_TOKEN 
          }
     }
     request.get(options, function(error, response, body)
@@ -115,7 +114,7 @@ app.post("/users/:id/meetings", (req,res) =>{
     options = {
          method: 'POST',
          url: ZOOM_API_ENDPOINT + 'users/' + id + '/meetings',
-         headers: { authorization: 'Bearer '+ JWT_Token },
+         headers: { authorization: 'Bearer '+ JWT_TOKEN  },
          body: req.body, 
          json: true,     
      }
