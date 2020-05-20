@@ -1,4 +1,4 @@
-# A NODEJS server to query the Zoom REST API 2.0 (Proof of concept)
+# A NODEJS server to query the Zoom REST API 2.0
 
 # How to run instructions
 1. ```npm install```
